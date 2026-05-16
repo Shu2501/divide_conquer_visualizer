@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import random
+import pygame
 
 from algorithms.merge_sort import merge_sort
 from algorithms.quick_sort import quick_sort
@@ -19,6 +20,22 @@ class SortingVisualizer:
         self.root.geometry("1200x700")
 
         self.root.configure(bg="#121212")
+
+        #----------------- SOUNDS ---------------- #
+
+        pygame.mixer.init()
+
+        self.tick_channel = pygame.mixer.Channel(0)
+
+        self.complete_channel = pygame.mixer.Channel(1)
+
+        self.tick_sound = pygame.mixer.Sound("assets/sounds/tick.wav")
+
+        self.complete_sound = pygame.mixer.Sound("assets/sounds/complete.wav")
+
+        self.tick_sound.set_volume(0.2)
+
+        self.complete_sound.set_volume(0.8)
 
         # ---------------- VARIABLES ---------------- #
 
@@ -344,6 +361,12 @@ class SortingVisualizer:
 
             self.draw_array(colors)
 
+            if self.steps % 12 == 0:
+
+                if not self.tick_channel.get_busy():
+
+                    self.tick_channel.play(self.tick_sound)
+
             self.steps += 1
 
             self.comparisons += 1
@@ -371,6 +394,12 @@ class SortingVisualizer:
             )
 
             self.is_sorting = False
+
+            self.tick_channel.stop()
+
+            self.complete_channel.play(
+                self.complete_sound
+            )
 
             self.info_label.config(
                 text=f"""
