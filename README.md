@@ -88,6 +88,7 @@ divide_conquer_visualizer/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
 # Screenshots
 
