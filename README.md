@@ -20,6 +20,8 @@ This project helps students understand recursive sorting techniques such as Merg
 - Comparison Counter
 - Time Complexity Display
 - Modern Dark-Themed UI
+- Retro Sound Effects
+- Audio Feedback System
 
 ---
 
@@ -66,6 +68,7 @@ Quick Sort works by:
 - Object-Oriented Programming
 - Recursive Algorithms
 - Generator Functions
+- Pygame Audio Mixer
 
 ---
 
@@ -85,3 +88,19 @@ divide_conquer_visualizer/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+
+# Screenshots
+
+## Merge Sort Visualization
+
+![Merge Sort](assets/screenshots/merge_sort.png)
+
+## Quick Sort Viusalization
+
+![Quick Sort](assets/screenshots/quick_sort.png)
+
+## Completed Sorting
+
+![Completed](assets/screenshots/completed_merge.png)
+
+![Completed](assets/screenshots/completed_quick.png)
